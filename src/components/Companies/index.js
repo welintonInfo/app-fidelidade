@@ -7,7 +7,7 @@ import { Container, Name, Description, Stats, Stat, StatCount } from './styles'
 export default function Companies({ data, navigate }) {  
   return (
     <Container onPress={() => navigate('Company', {data}) }>
-      <Name>{data.company}</Name>
+      <Name>{data.name}</Name>
       <Description>{data.description}</Description>
 
       <Stats>

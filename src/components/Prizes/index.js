@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 
 import { Container, Name, Description, Stats, Stat, StatCount } from './styles'
 
-export default function Awards({ data }) {
+export default function Prizes({ data }) {
   return (
     <Container>
       <Name>{data.name}</Name>

@@ -8,28 +8,28 @@ import Companies from '~/components/Companies'
 const data = [
   {
     id: '1',
-    company: 'Company 1',
+    name: 'Company 1',
     description: 'Company 1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel felis eget erat ornare feugiat. ',
     stars: 4,
     comments: 40
   },
   {
     id: '2',
-    company: 'Company 2',
+    name: 'Company 2',
     description: 'Company 2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel felis eget erat ornare feugiat. ',
     stars: 4,
     comments: 40
   },
   {
     id: '3',
-    company: 'Company 3',
+    name: 'Company 3',
     description: 'Company 3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel felis eget erat ornare feugiat. ',
     stars: 4,
     comments: 40
   },
   {
     id: '4',
-    company: 'Company 4',
+    name: 'Company 4',
     description: 'Company 4 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel felis eget erat ornare feugiat. ',
     stars: 4,
     comments: 40
