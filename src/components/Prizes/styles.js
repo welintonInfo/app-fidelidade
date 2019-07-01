@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Container = styled.View`
+export const Container = styled.TouchableOpacity`
   padding: 20px;
   border-radius: 4px;
   background: #FFF;
@@ -22,17 +22,26 @@ export const Description = styled.Text.attrs({
 `
 
 export const Stats = styled.View`
+  flex: 1;
   flex-direction: row;
-  margin-top: 15px;
+  justify-content: space-between;
 `
 
 export const Stat = styled.View`
-  flex-direction: row;
-  margin-right: 15px;
-  align-items: center;
+  flex-direction: row;  
+  text-align: right;
+`
+
+export const StatRight = styled.View`
+float: right;
 `
 
 export const StatCount = styled.Text`
   margin-left: 6px;
 `
 
+export const Price = styled.Text`
+  font-weight: bold;
+  font-size: 20px;
+  color: #666;
+`

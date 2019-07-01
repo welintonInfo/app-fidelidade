@@ -16,17 +16,20 @@ const prizesData = [
   {
     id: 1,
     name: 'Premio 1',
-    description: 'Descricao do premio 1'
+    description: 'Descricao do premio 1',
+    pontuation: 250
   },
   {
     id: 2,
     name: 'Premio 2',
-    description: 'Descricao do premio 2'
+    description: 'Descricao do premio 2',
+    pontuation: 200
   },
   {
     id: 3,
     name: 'Premio 3',
-    description: 'Descricao do premio 3'
+    description: 'Descricao do premio 3',
+    pontuation: 150
   },
 ]
 
@@ -72,6 +75,7 @@ export default class Company extends React.Component {
             keyboardShouldPersistTaps="handled"
             data={prizesData}
             keyExtractor={item => String(item.id)}
+            onPress={ () => console.log('clicou')}
             renderItem={({ item }) => (
               <Prizes data={item} />          
             )}
