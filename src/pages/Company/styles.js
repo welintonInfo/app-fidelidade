@@ -51,3 +51,31 @@ export const LogoContentTitle = styled.View`
 `
 
 export const CompanyContent = styled.View``
+
+export const Pontuation = styled.Text`
+  font-size: 24px;
+  color: #FFF;
+  font-weight: bold;
+  padding: 0 20px;
+`
+
+export const Stats = styled.View`
+  flex-direction: row;
+  margin-top: 10px;
+  padding: 0 20px;
+  justify-content: space-between;
+  padding: 30px 20px; 
+`
+
+export const Stat = styled.View`
+  flex-direction: row;  
+  text-align: right;
+`
+
+export const Button = styled.Button`
+  background-color: #666;
+  color: #FFF;
+  font-size: 2px;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
+`

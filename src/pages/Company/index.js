@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, Dimensions } from 'react-native'
+import { Image, Dimensions, Text, Button, Modal } from 'react-native'
 
 import { 
   Container, 
@@ -8,9 +8,13 @@ import {
   Description, 
   LogoContent, 
   LogoContentTitle, 
-  CompanyContent 
+  CompanyContent,
+  Pontuation, 
+  Stats,
+  Stat
 } from './styles'
 import Prizes from '~/components/Prizes'
+import MyShopping from '~/components/MyShopping'
 
 const prizesData = [
   {
@@ -39,14 +43,14 @@ const imageWidth = dimensions.width;
 
 export default class Company extends React.Component {
 
+  state = {
+    isModalVisible: false
+  }
+
   constructor(props) {
     super(props)
   }
   
-  componentDidMound() {
-    console.log(this.props)
-  }
-
   render() {
     const { data } = this.props.navigation.state.params
 
@@ -59,8 +63,7 @@ export default class Company extends React.Component {
               justifyContent: 'center'
             }}
             source={{
-              uri:
-                'https://loremflickr.com/800/300',
+              uri: data.image,
             }}
           />
           <LogoContentTitle>
@@ -71,6 +74,19 @@ export default class Company extends React.Component {
         <CompanyContent>
           <Description>{data.description}</Description>      
     
+          <Pontuation>
+            Você tem 200 pts
+          </Pontuation>
+
+          <Stats>
+            <Button 
+              title="Comentários" 
+              onPress={ () => alert('Comentários') } 
+              color="#666"
+            /> 
+            <MyShopping data={data} />
+          </Stats>
+
           <List
             keyboardShouldPersistTaps="handled"
             data={prizesData}
