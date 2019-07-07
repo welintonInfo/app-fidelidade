@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, Dimensions, Text, Button, Modal } from 'react-native'
+import { Image, Dimensions, Text, Button } from 'react-native'
 
 import { 
   Container, 
@@ -59,7 +59,7 @@ export default class Company extends React.Component {
         <LogoContent>
           <Image
             style={{ 
-              width: imageWidth, height: 200, alignItems: 'center',
+              width: imageWidth, height: 150, alignItems: 'center',
               justifyContent: 'center'
             }}
             source={{

@@ -11,7 +11,6 @@ export const Name = styled.Text`
   font-size: 18px;
   font-weight: bold;
   color: #333;
-  text-align: center;
 `
 
 export const Description = styled.Text.attrs({
@@ -65,4 +64,14 @@ export const ModalButtons = styled.View`
   flex: 1;
   flex-direction: row;
   justify-content: space-between;
+`
+
+export const ModalCloseButton = styled.TouchableOpacity`
+  background: #ff8080;
+  color: #FFF;
+  padding: 6px;
+  height: 30px;
+  width: 30px;
+  border-radius: 30px;
+  align-items: center;
 `

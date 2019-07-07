@@ -41,8 +41,8 @@ export default class MyShopping extends React.Component {
     return (
       <Modal 
         isVisible={this.state.isModalVisible}
-        animationIn="zoomInDown"
-        animationOut="zoomOutUp"
+        animationIn="slideInLeft"
+        animationOut="slideOutRight"
       >
         <ModalContent>
           <View style={{position: 'absolute', top: 5, right: 5}}>

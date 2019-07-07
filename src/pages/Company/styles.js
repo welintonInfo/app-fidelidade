@@ -35,7 +35,6 @@ export const List = styled.FlatList.attrs({
 `
 
 export const LogoContent = styled.View`
-  flex: 1;  
   align-items: stretch;  
   justify-content: center; 
 `
@@ -50,7 +49,9 @@ export const LogoContentTitle = styled.View`
   align-items: center;
 `
 
-export const CompanyContent = styled.View``
+export const CompanyContent = styled.ScrollView`
+  
+`
 
 export const Pontuation = styled.Text`
   font-size: 24px;
