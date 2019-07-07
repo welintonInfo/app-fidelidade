@@ -32,3 +32,13 @@ export const List = styled.FlatList.attrs({
 })`
   margin-top: 20px
 `
+
+export const ModalCloseButton = styled.TouchableOpacity`
+  background: #ff8080;
+  color: #FFF;
+  padding: 6px;
+  height: 30px;
+  width: 30px;
+  border-radius: 30px;
+  align-items: center;
+`

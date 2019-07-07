@@ -1,9 +1,9 @@
 import React from 'react'
-import { View, Button, Text } from 'react-native'
+import { View, Button, Text, TouchableOpacity } from 'react-native'
 import Modal from "react-native-modal";
 import Icon from 'react-native-vector-icons/FontAwesome'
 
-import { List, Price, ModalContent, ModalTitle } from './styles'
+import { List, Price, ModalContent, ModalTitle, ModalCloseButton } from './styles'
 
 const shooping = [
   {
@@ -41,17 +41,27 @@ export default class MyShopping extends React.Component {
     return (
       <Modal 
         isVisible={this.state.isModalVisible}
-        animationIn="slideInLeft"
-        animationOut="slideOutRight"
+        animationIn="zoomInDown"
+        animationOut="zoomOutUp"
       >
         <ModalContent>
+          <View style={{position: 'absolute', top: 5, right: 5}}>
+            <ModalCloseButton 
+              onPress={() => this.toggleModal()}                                        
+            >
+              <Text>X</Text>
+            </ModalCloseButton>
+          </View>
           <ModalTitle>Historico de compras</ModalTitle>
           <List
             keyboardShouldPersistTaps="handled"
             data={shooping}
             keyExtractor={item => String(item.id)}
             renderItem={({ item }) => (
-              <Text>{item.date}</Text>
+              <View style={{ flexDirection: 'row', justifyContent: 'space-between', flex: 1 }}>
+                <Text>{item.date}</Text>
+                <Text>R${item.value}</Text>
+              </View>
             )}
           />
         </ModalContent>
