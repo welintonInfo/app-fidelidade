@@ -1,17 +1,23 @@
 import React from 'react'
-import { View, Button, Text } from 'react-native'
+import { View, Button, Text, ActivityIndicator } from 'react-native'
 import Modal from "react-native-modal";
 import Icon from 'react-native-vector-icons/FontAwesome'
 
 import { Container, Name, Description, Stats, Stat, Price, ModalContent, ModalTitle, ModalCloseButton } from './styles'
 
 export default class Prizes extends React.Component {
-  state = {
-    isModalVisible: false
-  }
-
+  
   constructor(props) {
     super(props)
+    this.state = {
+      isModalVisible: false,
+      loading: false,
+      voucher: null
+    }
+  }
+
+  toggleModal = () => {
+    this.setState({ isModalVisible: !this.state.isModalVisible })
   }
 
   renderModal(isVisible = false) {    
@@ -36,20 +42,55 @@ export default class Prizes extends React.Component {
           <Name>{ this.props.data.name }</Name>
           <Price>{ this.props.data.pontuation } pts</Price>
 
-          <Button
-            title="Resgatar"
-            color=""
-            onPress={() => alert('Do something here')}
-          />
+          { this.renderModalButton() }
 
         </ModalContent>
       </Modal>
     )
   }
 
-  toggleModal = () => {
-    this.setState({ isModalVisible: !this.state.isModalVisible })
+  renderModalButton = () => {
+    if(this.state.voucher) {
+      return (
+        <View>
+          <Text style={{ textAlign: 'center', fontSize: 20 }}>Resgate solicitado {'\n'} Apresente o voucher e pegue o prêmio</Text>
+          <Text style={{ textAlign: 'center', fontSize: 24, fontWeight: 'bold' }}>Voucher: {this.state.voucher}</Text>
+        </View>
+      )
+    }
+
+    if ( this.state.loading ) {
+      return (
+        <ActivityIndicator size="small" color="#00ff00" />
+      )
+    }
+
+    return (
+      <Button
+        title="Comfirmar"
+        color=""
+        onPress={() => this.generatePrizeVoucher() }
+      />
+    )
+  }  
+
+  generatePrizeVoucher = async () => {    
+    if( Number(this.props.pontuation) < Number(this.props.data.pontuation) ) {
+      alert('Pontuation is not valid')        
+    } else {
+      let voucher = Math.random().toString(36).substring(7) 
+      this.setState({ loading: true }) 
+      let promise = await this.sendPrizeRequest() 
+      this.setState({ loading: false, voucher }) 
+    }    
   }
+  
+  sendPrizeRequest = () => {
+    return new Promise(function(resolve) {
+      setTimeout(resolve, 2000);
+    })
+  }
+
 
   render() {
     return (

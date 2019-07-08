@@ -93,7 +93,7 @@ export default class Company extends React.Component {
             keyExtractor={item => String(item.id)}
             onPress={ () => console.log('clicou')}
             renderItem={({ item }) => (
-              <Prizes data={item} />          
+              <Prizes data={item} pontuation={200}/>          
             )}
           />
         </CompanyContent>
