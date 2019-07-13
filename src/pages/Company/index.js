@@ -15,6 +15,7 @@ import {
 } from './styles'
 import Prizes from '~/components/Prizes'
 import MyShopping from '~/components/MyShopping'
+import HeaderNavigationBar from '~/components/HeaderNavigationBar'
 
 const prizesData = [
   {
@@ -41,12 +42,7 @@ const dimensions = Dimensions.get('window');
 const imageHeight = Math.round(dimensions.width * 9 / 16);
 const imageWidth = dimensions.width;
 
-export default class Company extends React.Component {
-
-  state = {
-    isModalVisible: false
-  }
-
+export default class Company extends React.Component {  
   constructor(props) {
     super(props)
   }
@@ -56,6 +52,7 @@ export default class Company extends React.Component {
 
     return (
       <Container>
+      <HeaderNavigationBar { ...this.props } />
         <LogoContent>
           <Image
             style={{ 

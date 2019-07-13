@@ -3,6 +3,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 
 import { Container, Title, Form, Input, Submit, List } from './styles'
 import Companies from '~/components/Companies'
+import HeaderNavigationBar from '~/components/HeaderNavigationBar'
 
 
 const data = [
@@ -41,7 +42,6 @@ const data = [
 ]
 
 export default class Main extends React.Component {
-
   constructor(props) {
     super(props)
   }
@@ -54,6 +54,7 @@ export default class Main extends React.Component {
     const { navigate } = this.props.navigation
     return (
       <Container>
+        <HeaderNavigationBar { ...this.props } />
         <Title>Empresas parceiras</Title>
     
         <Form>
