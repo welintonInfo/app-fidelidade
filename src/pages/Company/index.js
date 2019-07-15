@@ -52,7 +52,7 @@ export default class Company extends React.Component {
 
     return (
       <Container>
-        <HeaderNavigationBar { ...this.props } />
+        <HeaderNavigationBar { ...this.props } title={data.name}/>
         <LogoContent>
           <Image
             style={{ 

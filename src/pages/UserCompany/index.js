@@ -36,7 +36,7 @@ export default class MyCompanies extends React.Component {
   render() {
     return (
       <Container>
-        <HeaderNavigationBar { ...this.props } title="Minhas Empresas" />
+        <HeaderNavigationBar { ...this.props } title="" />
 
         <CompanyContent>         
           <List

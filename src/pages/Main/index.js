@@ -54,7 +54,7 @@ export default class Main extends React.Component {
     const { navigate } = this.props.navigation
     return (
       <Container>
-        <HeaderNavigationBar { ...this.props } />
+        <HeaderNavigationBar { ...this.props } title="Principal" />
         <Title>Empresas parceiras</Title>
     
         <Form>

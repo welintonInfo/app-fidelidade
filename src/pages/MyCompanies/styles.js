@@ -3,12 +3,12 @@ import LinerGradient from 'react-native-linear-gradient'
 import { getStatusBarHeight } from 'react-native-status-bar-height'
 
 export const Container = styled(LinerGradient).attrs({
-  colors: ['#7159c1', '#9b49c1'],
+  colors: ['#518499', '#336f87'],
   start: { x: 0, y:0 },
   end: { x: 1, y:1 },
 })`
   flex: 1;  
-  padding-top: ${10 + getStatusBarHeight(true)}px;  
+  padding-top: ${getStatusBarHeight(true)}px;  
 `
 export const Name = styled.Text`
   font-size: 32px;
