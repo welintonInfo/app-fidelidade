@@ -63,9 +63,9 @@ export default class Company extends React.Component {
               uri: data.image,
             }}
           />
-          <LogoContentTitle>
+          {/* <LogoContentTitle>
             <Name>{data.name}</Name>
-          </LogoContentTitle>
+          </LogoContentTitle> */}
         </LogoContent>
 
         <CompanyContent>

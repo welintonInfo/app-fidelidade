@@ -13,7 +13,7 @@ const data = [
     description: 'Company 1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel felis eget erat ornare feugiat. ',
     stars: 4,
     comments: 40,
-    image: 'https://loremflickr.com/cache/resized/6185_6128268854_562129b2b4_b_800_300_nofilter.jpg'
+    image: 'https://picsum.photos/id/389/800/300'
   },
   {
     id: '2',
@@ -21,7 +21,7 @@ const data = [
     description: 'Company 2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel felis eget erat ornare feugiat. ',
     stars: 3,
     comments: 40,
-    image: 'https://loremflickr.com/cache/resized/65535_33882374838_d29aa2c264_c_800_300_nofilter.jpg'
+    image: 'https://picsum.photos/id/117/800/300'
   },
   {
     id: '3',
@@ -29,7 +29,7 @@ const data = [
     description: 'Company 3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel felis eget erat ornare feugiat. ',
     stars: 2,
     comments: 40,
-    image: 'https://loremflickr.com/cache/resized/65535_48006690943_2db80e35e8_c_800_300_nofilter.jpg'
+    image: 'https://picsum.photos/id/240/800/300'
   },
   {
     id: '4',
@@ -37,7 +37,7 @@ const data = [
     description: 'Company 4 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel felis eget erat ornare feugiat. ',
     stars: 1,
     comments: 40,
-    image: 'https://loremflickr.com/cache/resized/65535_33837806128_30057c8e68_c_800_300_nofilter.jpg'
+    image: 'https://picsum.photos/id/950/800/300'
   }
 ]
 

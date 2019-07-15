@@ -79,7 +79,7 @@ export default class MyShopping extends React.Component {
           <Button 
             title="Minhas compras" 
             onPress={ () => this.toggleModal() } 
-            color="#841584"
+            color="#666"
           />
           { this.renderModal() }
       </>

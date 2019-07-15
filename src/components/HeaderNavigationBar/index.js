@@ -1,5 +1,4 @@
 import React from 'react';
-import { View, Text, TouchableHighlight, Image } from 'react-native';
 import { Header, Icon } from "react-native-elements";
 
 export default class HeaderNavigationBar extends React.Component {
@@ -16,13 +15,13 @@ export default class HeaderNavigationBar extends React.Component {
 
   render() {
     return (
-      <Header
+      <Header        
         leftComponent={this.iconHamburguerMenu()}
         centerComponent={{
           text: this.props.title,
           style: { color: "#fff", fontWeight: "bold" }
         }}
-        statusBarProps={{ barStyle: "light-content" }}
+        statusBarProps={{ barStyle: "light-content", backgroundColor: 'transparent' }}
       />      
     );
   }
