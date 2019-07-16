@@ -128,8 +128,9 @@ export default class Prizes extends React.Component {
 
 
   render() {
+    const { navigate } = this.props.navigation
     return (
-      <Container onPress={() => alert('Vai abrir o perfil da empresa') }>
+      <Container onPress={() => navigate('UserCompany', { data: this.props.data }) }>
         <Stats>
           <Stat>
             <Name>{this.props.data.name}</Name>

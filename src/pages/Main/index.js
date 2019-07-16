@@ -1,5 +1,6 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons'
+import { BackHandler } from 'react-native'
 
 import { Container, Title, Form, Input, Submit, List } from './styles'
 import Companies from '~/components/Companies'
@@ -46,12 +47,10 @@ export default class Main extends React.Component {
     super(props)
   }
 
-  componentDidMount() {
-    console.log(this.props)
-  }
-
   render() {
     const { navigate } = this.props.navigation
+    const { state } = this.props.navigation
+    console.log(state)
     return (
       <Container>
         <HeaderNavigationBar { ...this.props } title="Principal" />

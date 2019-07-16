@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, Dimensions, Text, Button } from 'react-native'
+import { Text, BackHandler } from 'react-native'
 
 import { 
   Container, 
@@ -9,45 +9,19 @@ import {
 import UserCompany from '~/components/UserCompany'
 import HeaderNavigationBar from '~/components/HeaderNavigationBar'
 
-const companiesData = [
-  {
-    id: 1,
-    name: 'Lanchonete Come bem',
-    description: 'Descricao do Lanchonete Come bem',
-    pontuation: 250
-  },
-  {
-    id: 2,
-    name: 'Barbeiro Jamerson Dial',
-    description: 'Descricao do Lanchonete Come bem',
-    pontuation: 200
-  },
-]
-
-const dimensions = Dimensions.get('window');
-const imageHeight = Math.round(dimensions.width * 9 / 16);
-const imageWidth = dimensions.width;
-
 export default class MyCompanies extends React.Component {  
   constructor(props) {
     super(props)
   }
-  
+ 
   render() {
+    const { data } = this.props.navigation.state.params
     return (
       <Container>
-        <HeaderNavigationBar { ...this.props } title="" />
+        <HeaderNavigationBar { ...this.props } title={data.name} />
 
         <CompanyContent>         
-          <List
-            keyboardShouldPersistTaps="handled"
-            data={companiesData}
-            keyExtractor={item => String(item.id)}
-            onPress={ () => console.log('clicou')}
-            renderItem={({ item }) => (
-              <UserCompany data={item} pontuation={200}/>          
-            )}
-          />
+         <Text>Empresa {data.name}</Text>
         </CompanyContent>
 
       </Container>

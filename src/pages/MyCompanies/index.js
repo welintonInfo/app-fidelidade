@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, Dimensions, Text, Button } from 'react-native'
+import { BackHandler } from 'react-native'
 
 import { 
   Container, 
@@ -24,15 +24,11 @@ const companiesData = [
   },
 ]
 
-const dimensions = Dimensions.get('window');
-const imageHeight = Math.round(dimensions.width * 9 / 16);
-const imageWidth = dimensions.width;
-
 export default class MyCompanies extends React.Component {  
   constructor(props) {
     super(props)
   }
-  
+
   render() {
     return (
       <Container>
@@ -45,7 +41,7 @@ export default class MyCompanies extends React.Component {
             keyExtractor={item => String(item.id)}
             onPress={ () => console.log('clicou')}
             renderItem={({ item }) => (
-              <UserCompany data={item} pontuation={200}/>          
+              <UserCompany data={item} pontuation={200} { ...this.props }/>          
             )}
           />
         </CompanyContent>

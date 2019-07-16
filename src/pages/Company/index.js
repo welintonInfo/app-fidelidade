@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, Dimensions, Text, Button } from 'react-native'
+import { Image, Dimensions, BackHandler, Button } from 'react-native'
 
 import { 
   Container, 
@@ -46,13 +46,12 @@ export default class Company extends React.Component {
   constructor(props) {
     super(props)
   }
-  
+ 
   render() {
     const { data } = this.props.navigation.state.params
-
     return (
       <Container>
-        <HeaderNavigationBar { ...this.props } title={data.name}/>
+        <HeaderNavigationBar { ...this.props } title={data.name} />
         <LogoContent>
           <Image
             style={{ 
