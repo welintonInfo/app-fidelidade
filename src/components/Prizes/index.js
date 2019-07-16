@@ -16,8 +16,10 @@ export default class Prizes extends React.Component {
     }
   }
 
-  toggleModal = () => {
-    this.setState({ isModalVisible: !this.state.isModalVisible })
+  toggleOnPress = () => {
+    if ( !this.props.editing ) {
+      this.setState({ isModalVisible: !this.state.isModalVisible })
+    } 
   }
 
   renderModal(isVisible = false) {    
@@ -31,7 +33,7 @@ export default class Prizes extends React.Component {
 
           <View style={{ position: 'absolute', top: 5, right: 5 }}>
             <ModalCloseButton 
-              onPress={() => this.toggleModal()}                                        
+              onPress={() => this.toggleOnPress()}                                        
             >
               <Text>X</Text>
             </ModalCloseButton>
@@ -94,7 +96,7 @@ export default class Prizes extends React.Component {
 
   render() {
     return (
-      <Container onPress={() => this.toggleModal() }>
+      <Container onPress={() => this.toggleOnPress() }>
         <Stats>
           <Stat>
             <Name>{ this.props.data.name }</Name>
