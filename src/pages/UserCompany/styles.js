@@ -10,6 +10,11 @@ export const Container = styled(LinerGradient).attrs({
   flex: 1;  
   padding-top: ${getStatusBarHeight(true)}px;  
 `
+
+export const Content = styled.View`
+  padding: 5px;
+`
+
 export const Name = styled.Text`
   font-size: 32px;
   color: #FFF;

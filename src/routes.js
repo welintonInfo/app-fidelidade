@@ -15,7 +15,7 @@ const Routes = createDrawerNavigator(
     UserCompany: { screen: UserCompany }, 
   },
   {
-    initialRouteName: 'Main',
+    initialRouteName: 'UserCompany',
     //For the Custom sidebar menu we have to provide our CustomSidebarMenu
     contentComponent: CustomSidebar,
     //Sidebar width

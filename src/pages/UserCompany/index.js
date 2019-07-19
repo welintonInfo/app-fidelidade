@@ -3,7 +3,7 @@ import { View, Image, Dimensions } from 'react-native'
 import { TabView, SceneMap } from 'react-native-tab-view';
 
 import { 
-  Container, 
+  Content, 
   LogoContent, 
   CompanyContent,
 } from './styles'
@@ -22,6 +22,45 @@ const data = {
 
 }
 
+const dataListRedeem = [
+  {
+    name: 'José Figueiredo',
+    date: '20/05/2019',
+    prize: 'Hamburguer + refri',
+    pontuation: 250
+  },
+  {
+    name: 'Maria Joaquina',
+    date: '19/05/2019',
+    prize: 'Mate-cola + bombom',
+    pontuation: 200
+  },
+  {
+    name: 'Manoel Dr',
+    date: '15/05/2019',
+    prize: 'Hamburguer + refri',
+    pontuation: 250
+  },
+  {
+    name: 'José Figueiredo',
+    date: '20/05/2019',
+    prize: 'Hamburguer + refri',
+    pontuation: 250
+  },
+  {
+    name: 'Maria Joaquina',
+    date: '19/05/2019',
+    prize: 'Mate-cola + bombom',
+    pontuation: 200
+  },
+  {
+    name: 'Manoel Dr',
+    date: '15/05/2019',
+    prize: 'Hamburguer + refri',
+    pontuation: 250
+  }
+]
+
 export default class MyCompanies extends React.Component {  
 
   state = {
@@ -35,7 +74,7 @@ export default class MyCompanies extends React.Component {
 
   constructor(props) {
     super(props)
-  }
+  }  
 
   render() {
     return (
@@ -54,15 +93,18 @@ export default class MyCompanies extends React.Component {
         </LogoContent>
 
         <TabView
+          tabStyle={{ height: 'auto' }}
+          lazy={true}
+          timingConfig="0"
           navigationState={this.state}
           renderScene={SceneMap({
             info: () => <UserCompanyInfo { ...this.props } />,
-            redeem: () => <UserCompanyRedeem { ...this.props } />,
+            redeem: () => <UserCompanyRedeem { ...this.props } data={dataListRedeem} />,
             comments: () => <UserCompanyComments { ...this.props } />,
           })}
           onIndexChange={index => this.setState({ index })}
           initialLayout={{ width: Dimensions.get('window').width }}
-        />
+        />         
 
       </>
     )

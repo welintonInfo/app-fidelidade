@@ -17,7 +17,7 @@ export default class CustomSidebar extends Component {
       {
         navOptionIcon: 'briefcase',
         navOptionName: 'Minha Empresa',
-        screenToNavigate: 'MyCompanies',
+        screenToNavigate: 'UserCompany',
       }
     ];
   }
