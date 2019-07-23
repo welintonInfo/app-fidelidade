@@ -13,3 +13,16 @@ export const List = styled.FlatList.attrs({
 })`
   margin-top: 20px
 `
+export const LogoContent = styled.View`
+  align-items: stretch;  
+  justify-content: center; 
+  padding-bottom: 30px;
+`
+export const LogoEditButton = styled.View`
+  position: absolute;
+  top: 5%;
+  right: 2%; 
+  justify-content: center;
+  align-items: center;
+  border-color: red;
+`

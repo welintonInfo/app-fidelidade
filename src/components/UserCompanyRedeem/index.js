@@ -25,7 +25,11 @@ export default class UserCompanyRedeem extends React.Component {
   }
 
   componentDidMount() {
-    this.loadRepositories();
+    // this.loadRepositories();
+  }
+
+  componentWillUnmount(){
+    this.setState({ loading: false });
   }
 
   loadRepositories = async () => {
@@ -170,7 +174,7 @@ export default class UserCompanyRedeem extends React.Component {
         { this.renderMessage() }
         <List
           keyboardShouldPersistTaps="handled"
-          data={this.state.data}
+          data={this.props.data}
           keyExtractor={item => String(item.id)}
           renderItem={({ item }) => (
             this.renderListItem(item)

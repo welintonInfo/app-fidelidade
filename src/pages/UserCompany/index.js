@@ -24,36 +24,42 @@ const data = {
 
 const dataListRedeem = [
   {
+    id: 1,
     name: 'José Figueiredo',
     date: '20/05/2019',
     prize: 'Hamburguer + refri',
     pontuation: 250
   },
   {
+    id: 2,
     name: 'Maria Joaquina',
     date: '19/05/2019',
     prize: 'Mate-cola + bombom',
     pontuation: 200
   },
   {
+    id: 3,
     name: 'Manoel Dr',
     date: '15/05/2019',
     prize: 'Hamburguer + refri',
     pontuation: 250
   },
   {
+    id: 4,
     name: 'José Figueiredo',
     date: '20/05/2019',
     prize: 'Hamburguer + refri',
     pontuation: 250
   },
   {
+    id: 5,
     name: 'Maria Joaquina',
     date: '19/05/2019',
     prize: 'Mate-cola + bombom',
     pontuation: 200
   },
   {
+    id: 6,
     name: 'Manoel Dr',
     date: '15/05/2019',
     prize: 'Hamburguer + refri',
@@ -79,21 +85,9 @@ export default class MyCompanies extends React.Component {
   render() {
     return (
       <>
-        <HeaderNavigationBar { ...this.props } title={data.name} />
-        <LogoContent>
-          <Image
-            style={{ 
-              width: imageWidth, height: 150, alignItems: 'center',
-              justifyContent: 'center'
-            }}
-            source={{
-              uri: 'https://picsum.photos/id/950/800/300',
-            }}
-          />
-        </LogoContent>
+        <HeaderNavigationBar { ...this.props } title={data.name} />       
 
-        <TabView
-          tabStyle={{ height: 'auto' }}
+        <TabView          
           lazy={true}
           timingConfig="0"
           navigationState={this.state}

@@ -39,7 +39,6 @@ const prizesData = [
 ]
 
 const dimensions = Dimensions.get('window');
-const imageHeight = Math.round(dimensions.width * 9 / 16);
 const imageWidth = dimensions.width;
 
 export default class Company extends React.Component {  
