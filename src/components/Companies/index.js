@@ -18,7 +18,7 @@ export default function Companies({ data, navigate }) {
   }
 
   return (  
-    <Container onPress={() => navigate('Company', {data}) }>
+    <Container key={data.id} onPress={() => navigate('Company', {data}) }>
       <Name>{data.name}</Name>
       <Description>{data.description}</Description>
 

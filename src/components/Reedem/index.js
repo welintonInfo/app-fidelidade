@@ -6,7 +6,7 @@ import { Button, Input } from 'react-native-elements'
 
 import { ModalContent, ModalTitle, ModalCloseButton } from './styles'
 
-const Reedem = (props) => {
+const Reedem = props => {
   renderModalButton = () => {
     if ( props.reedemLoading ) {
       return (
@@ -37,19 +37,15 @@ const Reedem = (props) => {
   }  
 
   verifyVoucherNumber = async () => { 
-    props.verifyVoucher()
     await sendVoucherRequest() 
-    props.isVoucherValid()
   }
 
   sendVoucherRequest = () => {
-    return new Promise(function(resolve) {
-      setTimeout(resolve, 2000);
-    })
+    alert('enviando')
   }
 
   confirmVoucher = async () => { 
-    props.confirmedVoucher()
+    await sendVoucherRequest() 
     alert('Entrega da premiação registrada')
   }
 
@@ -58,14 +54,12 @@ const Reedem = (props) => {
       isVisible={props.reedem_model_visible}
       animationIn="slideInLeft"
       animationOut="slideOutRight"
-      animationInTiming={1000}
-      hideModalContentWhileAnimating={true}
     >
       <ModalContent>
 
         <View style={{ position: 'absolute', top: 5, right: 5 }}>
           <ModalCloseButton 
-            onPress={() => props.changeReedemModalVisible(false)}                                   
+            onPress={() => props.changeReedemModalVisible(false)}                                  
           >
             <Text>X</Text>
           </ModalCloseButton>

@@ -74,6 +74,7 @@ export default class UserCompanyInfo extends React.Component {
   
 
   render() {    
+    console.log(this.props)
     return (
       <Container>
 

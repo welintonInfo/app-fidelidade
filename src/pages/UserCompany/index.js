@@ -1,9 +1,7 @@
 import React from 'react';
-import { View, Image, Dimensions } from 'react-native'
-import { TabView, SceneMap } from 'react-native-tab-view'
+import { Dimensions } from 'react-native'
 import { connect } from 'react-redux'
-import Icon from 'react-native-vector-icons/FontAwesome'
-import { FloatingAction } from "react-native-floating-action"
+import { FloatingButton, PillView } from "@99xt/first-born";
 
 import HeaderNavigationBar from '~/components/HeaderNavigationBar'
 import UserCompanyInfo from '~/components/UserActions/UserCompanyInfo'
@@ -71,21 +69,17 @@ const dataListRedeem = [
   }
 ]
 
-const actionButtos = [
-  {
-    text: "Resgate",
-    icon: <Icon name="heart" size={25} />,
-    name: "bt_reedem",
-    onPress: 'reedem',
-    position: 2
-  },
-  {
-    text: "Adicionar Compra",
-    icon: <Icon name="cart-plus" size={25} />,
-    name: "bt_shopping",
-    position: 1
-  },
-]
+const pillScenes = [
+  { scene: <UserCompanyInfo  /> },
+  { scene: <UserCompanyRedeem data={dataListRedeem} /> },
+  { scene: <UserCompanyComments /> },
+];
+
+const pillHeaders = [
+  { title: 'Info', icon: "home" },
+  { title: 'Resgates', icon: "card" },
+  { title: 'Avaliações', icon: "list" },
+];
 
 class UserCompany extends React.Component { 
 
@@ -99,17 +93,39 @@ class UserCompany extends React.Component {
         { key: 'redeem', title: 'Restages' },
         { key: 'comments', title: 'avaliações' },
       ],
-      reedem_model_visible: false
+      reedem_model_visible: false,    
+      actionButtos: []  
     };
   }  
 
-  toogleReedemModal() {
+  componentDidMount() {
+    const actionButtos =  [
+      {
+        text: "Resgate",
+        icon: "heart",
+        name: "bt_reedem",
+        onPress: () => alert('rtes'),
+        position: 1,
+      },
+      {
+        text: "Adicionar Compra",
+        icon:"cart",
+        name: "bt_shopping",
+        position: 2,
+        onPress: () => this.props.changeReedemModalVisible(true)
+      },
+    ]
+
+    this.setState({ actionButtos })
+  }
+
+  toogleReedemModal = () => {
     this.setState({ reedem_model_visible: !this.state.reedem_model_visible })
   }
 
   handlerOnPressButton = onPress => {
     if ( onPress === 'bt_reedem') {
-      this.props.changeReedemModalVisible(true)
+      this.toogleReedemModal()
     }
   }
 
@@ -118,27 +134,17 @@ class UserCompany extends React.Component {
       <>
         <HeaderNavigationBar { ...this.props } title={data.name} />       
 
-        <TabView 
-          navigationState={this.state}
-          renderScene={SceneMap({
-            info: () => <UserCompanyInfo { ...this.props } />,
-            redeem: () => <UserCompanyRedeem { ...this.props } data={dataListRedeem} />,
-            comments: () => <UserCompanyComments { ...this.props } />,
-          })}
-          onIndexChange={index => {
-              this.setState({ index }) 
-            }
-          }
-          initialLayout={{ width: Dimensions.get('window').width }}
-        />             
+        <PillView      
+          pillHeaders={pillHeaders} 
+          pillScenes={pillScenes} 
+        />
 
-        <FloatingAction     
-          actions={actionButtos}
-          position="right"
-          onPressItem={name => this.handlerOnPressButton(name)}
+        <FloatingButton  
+          ref={(ref) => { this.floatingAction = ref }}   
+          actions={this.state.actionButtos}
         /> 
 
-        <Reedem { ...this.props } visible={this.state.reedem_model_visible} />
+        <Reedem {...this.props} />
       </>
     )
   }

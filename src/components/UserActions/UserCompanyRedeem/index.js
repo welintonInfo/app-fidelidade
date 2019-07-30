@@ -24,30 +24,26 @@ export default class UserCompanyRedeem extends React.Component {
     }
   }
 
-  componentDidMount() {
-    // this.loadRepositories();
-  }
-
   componentWillUnmount(){
     this.setState({ loading: false });
   }
 
-  loadRepositories = async () => {
-    if (this.state.loading) return;
+  // loadRepositories = async () => {
+  //   if (this.state.loading) return;
 
-    const { page } = this.state;
+  //   const { page } = this.state;
 
-    this.setState({ loading: true });
+  //   this.setState({ loading: true });
 
-    const response = await fetch(`https://api.github.com/search/repositories?q=${searchTerm}&per_page=${perPage}&page=${page}`);
-    const repositories = await response.json();
+  //   const response = await fetch(`https://api.github.com/search/repositories?q=${searchTerm}&per_page=${perPage}&page=${page}`);
+  //   const repositories = await response.json();
 
-    this.setState({
-      data: [ ...this.state.data, ...repositories.items ],
-      page: page + 1,
-      loading: false,
-    });
-  }
+  //   this.setState({
+  //     data: [ ...this.state.data, ...repositories.items ],
+  //     page: page + 1,
+  //     loading: false,
+  //   });
+  // }
 
   renderListItem = (item) => (
     <ContentList>    

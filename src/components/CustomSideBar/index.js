@@ -46,6 +46,7 @@ export default class CustomSidebar extends Component {
           <View style={{ width: '100%' }}>
             {this.items.map((item, key) => (
               <View
+                key={key}
                 style={{
                   flexDirection: 'row',
                   alignItems: 'center',
