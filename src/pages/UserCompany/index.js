@@ -1,7 +1,7 @@
 import React from 'react';
 import { Dimensions } from 'react-native'
 import { connect } from 'react-redux'
-import { FloatingButton, PillView } from "@99xt/first-born";
+import { FloatingButton, PillView } from '@99xt/first-born'
 
 import HeaderNavigationBar from '~/components/HeaderNavigationBar'
 import UserCompanyInfo from '~/components/UserActions/UserCompanyInfo'
@@ -12,11 +12,12 @@ import {
   changeReedemModalVisible,
   verifyVoucher,
   isVoucherValid,
-  confirmedVoucher
+  confirmedVoucher,
+  takeReedem
 } from '~/actions/companyActions'
 
 
-const dimensions = Dimensions.get('window');
+const dimensions = Dimensions.get('window')
 const imageHeight = Math.round(dimensions.width * 9 / 16);
 const imageWidth = dimensions.width;
 
@@ -81,8 +82,7 @@ const pillHeaders = [
   { title: 'Avaliações', icon: "list" },
 ];
 
-class UserCompany extends React.Component { 
-
+class UserCompany extends React.Component {
   constructor(props) {
     super(props)
 
@@ -103,16 +103,16 @@ class UserCompany extends React.Component {
       {
         text: "Resgate",
         icon: "heart",
-        name: "bt_reedem",
-        onPress: () => alert('rtes'),
+        name: "bt_reedem",      
         position: 1,
+        onPress: () => this.props.changeReedemModalVisible(true)
       },
       {
         text: "Adicionar Compra",
         icon:"cart",
         name: "bt_shopping",
         position: 2,
-        onPress: () => this.props.changeReedemModalVisible(true)
+        onPress: () => alert('include shooping')        
       },
     ]
 
@@ -164,6 +164,7 @@ export default connect(
     changeReedemModalVisible,
     verifyVoucher,
     isVoucherValid,
-    confirmedVoucher
+    confirmedVoucher,
+    takeReedem
   }
 )(UserCompany);

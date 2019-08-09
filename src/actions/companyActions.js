@@ -2,7 +2,8 @@ import {
   REEDEM_MODEL_VISIBLE,
   REEDEM_MODEL_VERIFY_VOUCHER,
   REEDEM_MODEL_VOUCHER_VALID,
-  REEDEM_MODEL_CONFIRMED_VOUCHER
+  REEDEM_MODEL_CONFIRMED_VOUCHER,
+  REEDEM_MODEL_TAKE_REEDEM
 } from './constants'
 
 
@@ -28,5 +29,11 @@ export const isVoucherValid = () => {
 export const confirmedVoucher = () => {
   return {
       type: REEDEM_MODEL_CONFIRMED_VOUCHER
+  }
+}
+
+export const takeReedem = () => {
+  return {
+      type: REEDEM_MODEL_TAKE_REEDEM
   }
 }

@@ -7,4 +7,5 @@ export const BTN_LOADING = 'btn_loading';
 export const REEDEM_MODEL_VISIBLE = 'reedem_model_visible'
 export const REEDEM_MODEL_VERIFY_VOUCHER = 'verify_voucher'
 export const REEDEM_MODEL_VOUCHER_VALID = 'voucher_valid'
+export const REEDEM_MODEL_TAKE_REEDEM = 'voucher_take_reedem'
 export const REEDEM_MODEL_CONFIRMED_VOUCHER = 'voucher_confirmed'

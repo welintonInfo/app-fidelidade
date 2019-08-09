@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, View, ActivityIndicator } from 'react-native'
+import { Text, View, ActivityIndicator, StyleSheet } from 'react-native'
 import Modal from "react-native-modal"
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { Button, Input } from 'react-native-elements'
@@ -13,17 +13,23 @@ const Reedem = props => {
         <ActivityIndicator size="small" color="#00ff00" />
       )
     }
-
+    
     if (props.validVoucher) {
       return (
-        <>
-          <Text>Voucher is valid</Text>
+        <View>
+          <View style={{ alignItems: 'center', marginBottom: 30 }}>
+            <Text>Voucher is valid</Text>
+            <Text>Mark Zukemberg</Text>
+            <Text>Hamburguer + Mate-cola</Text>          
+          </View>
+          
           <Button
             title="Confirmar"
             color=""
             onPress={() => confirmVoucher() }
           />
-        </>
+          
+        </View>
       )
     }
 
@@ -37,15 +43,21 @@ const Reedem = props => {
   }  
 
   verifyVoucherNumber = async () => { 
+    props.verifyVoucher()
     await sendVoucherRequest() 
+    props.isVoucherValid()
   }
 
   sendVoucherRequest = () => {
-    alert('enviando')
+    return new Promise(function(resolve) { 
+      setTimeout(resolve, 2000); 
+    }) 
   }
 
   confirmVoucher = async () => { 
+    props.takeReedem()
     await sendVoucherRequest() 
+    props.confirmedVoucher()
     alert('Entrega da premiação registrada')
   }
 
@@ -83,5 +95,18 @@ const Reedem = props => {
     </Modal>
   )
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  buttonContainer: {
+    flex: 1,
+    height: 30
+  }
+});
 
 export default Reedem
