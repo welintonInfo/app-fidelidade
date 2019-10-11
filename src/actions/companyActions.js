@@ -3,7 +3,8 @@ import {
   REEDEM_MODEL_VERIFY_VOUCHER,
   REEDEM_MODEL_VOUCHER_VALID,
   REEDEM_MODEL_CONFIRMED_VOUCHER,
-  REEDEM_MODEL_TAKE_REEDEM
+  REEDEM_MODEL_TAKE_REEDEM,
+  PRIZE_NEW_RECORD
 } from './constants'
 
 
@@ -35,5 +36,12 @@ export const confirmedVoucher = () => {
 export const takeReedem = () => {
   return {
       type: REEDEM_MODEL_TAKE_REEDEM
+  }
+}
+
+export const newPrize = prize => {
+  return {
+    type: PRIZE_NEW_RECORD,
+    payload: prize
   }
 }

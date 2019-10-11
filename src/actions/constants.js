@@ -9,3 +9,5 @@ export const REEDEM_MODEL_VERIFY_VOUCHER = 'verify_voucher'
 export const REEDEM_MODEL_VOUCHER_VALID = 'voucher_valid'
 export const REEDEM_MODEL_TAKE_REEDEM = 'voucher_take_reedem'
 export const REEDEM_MODEL_CONFIRMED_VOUCHER = 'voucher_confirmed'
+
+export const PRIZE_NEW_RECORD = 'prize_new_record'
