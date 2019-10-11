@@ -4,9 +4,10 @@ import { connect } from 'react-redux'
 import { FloatingButton, PillView } from '@99xt/first-born'
 
 import HeaderNavigationBar from '~/components/HeaderNavigationBar'
-import UserCompanyInfo from '~/components/UserActions/UserCompanyInfo'
-import UserCompanyRedeem from '~/components/UserActions/UserCompanyRedeem'
-import UserCompanyComments from '~/components/UserActions/UserCompanyComments'
+import UserCompanyInfo from '~/components/User/UserCompanyInfo'
+import UserCompanyRedeem from '~/components/User/UserCompanyRedeem'
+import UserCompanyComments from '~/components/User/UserCompanyComments'
+import UserPrizeModal from '~/components/User/UserPrizeModal'
 import Reedem from '~/components/Reedem'
 import {
   changeReedemModalVisible,
@@ -114,6 +115,13 @@ class UserCompany extends React.Component {
         position: 2,
         onPress: () => alert('include shooping')        
       },
+      {
+        text: "Novo Prêmio",
+        icon:"award",
+        name: "bt_new_prize",
+        position: 3,
+        onPress: () => alert('Adicionar PRize')        
+      },
     ]
 
     this.setState({ actionButtos })
@@ -145,6 +153,7 @@ class UserCompany extends React.Component {
         /> 
 
         <Reedem {...this.props} />
+        <UserPrizeModal {...this.props} />
       </>
     )
   }

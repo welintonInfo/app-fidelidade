@@ -6,7 +6,7 @@ import {
   List, 
   CompanyContent,
 } from './styles'
-import UserCompany from '~/components/UserActions/UserCompany'
+import UserCompany from '~/components/User/UserCompany'
 import HeaderNavigationBar from '~/components/HeaderNavigationBar'
 
 const companiesData = [
