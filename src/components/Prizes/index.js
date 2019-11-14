@@ -26,8 +26,8 @@ export default class Prizes extends React.Component {
     return (
       <Modal 
         isVisible={this.state.isModalVisible}
-        animationIn="slideInLeft"
-        animationOut="slideOutRight"
+        animationIn="zoomInDown"
+        animationOutTiming={1000}
       >
         <ModalContent>
 

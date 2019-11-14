@@ -21,10 +21,25 @@ export default class CustomSidebar extends Component {
         screenToNavigate: 'UserCompany',
       },
     ];
+
+    this.state = {
+      user: {
+        email: '',
+        _id: ''
+      }
+    }
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps)
+    // console.log(nextProps)
+  }
+
+  async componentWillMount() {
+    console.log('compoenent')
+    const user = await getItem('@api-user:data')
+    user = JSON.parse(user)
+    console.log(user)
+    this.setState({ user })
   }
 
   logout = async () => {
@@ -33,7 +48,7 @@ export default class CustomSidebar extends Component {
     navigate('SignIn')
   }
 
-  render() {    
+  render() {        
     return (
       <Container>
         <ScrollView style={styles.scrollView}>
@@ -43,7 +58,7 @@ export default class CustomSidebar extends Component {
                 source={{ uri: this.proileImage }}
                 style={styles.sideMenuProfileIcon}
               />
-              <Text>Rosarinha</Text>
+              <Text>{ this.state.user._id }</Text>
               <Text>Cod: 4956</Text>
 
               {/*Divider between Top Image and Sidebar Option*/}

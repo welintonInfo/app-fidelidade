@@ -29,8 +29,6 @@ export default class SignIn extends Component {
   async componentWillMount() {
     const { navigate } = this.props.navigation
     const userLogged = await getItem('@api-user:token')
-    console.log('userLogged')
-    console.log(userLogged)
     if (userLogged) 
       navigate('Main')
   }
@@ -77,8 +75,10 @@ export default class SignIn extends Component {
           password: this.state.password,
         });
         
-        // await setItem('@api-user:token', response.data.token);
-        // await setItem('@api-user:data', response.data.user);
+        await setItem( '@api-user:token', JSON.stringify(response.data.token) );
+        await setItem( '@api-user:data', JSON.stringify(response.data.user) );
+       
+
         this.setState({ loading: false })
         navigate('Main')
       } catch (_err) {

@@ -13,7 +13,7 @@ api.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 AsyncStorage.getItem('@api-user:token').then(
   (token) => {
       if (token) {
-          //incluimos o cabeçalho authorization no default do axios
+          // Default authorization header at axios with user token
           api.defaults.headers.common['authorization'] = `Bearer ${token}`;
       }
   }

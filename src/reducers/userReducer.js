@@ -7,6 +7,7 @@ import {
   LOGIN_USUARIO_SUCESSO,
   LOGIN_USUARIO_ERRO,
   BTN_LOADING,
+  SET_USER_DATA_AFTER_LOGIN,
 } from '~/actions/constants';
 
 
@@ -17,6 +18,7 @@ const INITIAL_STATE = {
   erroCadastro: '',
   erroLogin: '',
   btn_loading: false,
+  data: {}
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -34,6 +36,7 @@ export default (state = INITIAL_STATE, action) => {
               btn_loading: false
           };
       case BTN_LOADING : return { ...state, btn_loading: true };
+      case SET_USER_DATA_AFTER_LOGIN : return { ...state, data: action.payload };
       default:
           return state;
   }

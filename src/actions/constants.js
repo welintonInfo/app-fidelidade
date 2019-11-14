@@ -1,7 +1,8 @@
-export const CHANGE_EMAIL = 'change_email';
-export const CHANGE_SENHA = 'change_password';
-export const CHANGE_NOME = 'change_name';
-export const BTN_LOADING = 'btn_loading';
+export const CHANGE_EMAIL = 'change_email'
+export const CHANGE_SENHA = 'change_password'
+export const CHANGE_NOME = 'change_name'
+export const BTN_LOADING = 'btn_loading'
+export const SET_USER_DATA_AFTER_LOGIN = 'set_user_data'
 
 // Company constants
 export const REEDEM_MODEL_VISIBLE = 'reedem_model_visible'
