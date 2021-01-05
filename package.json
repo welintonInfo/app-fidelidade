@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@99xt/first-born": "^1.1.8",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "native-base": "^2.12.1",
     "prop-types": "^15.7.2",
     "react": "16.8.3",
